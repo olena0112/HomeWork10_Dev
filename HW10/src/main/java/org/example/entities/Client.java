@@ -11,7 +11,6 @@ public class Client {
     @Column(name = "name", length = 200, nullable = false)
     private String name;
 
-    // Constructors
     public Client() {
     }
 
@@ -19,7 +18,6 @@ public class Client {
         this.name = name;
     }
 
-    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -36,7 +34,6 @@ public class Client {
         this.name = name;
     }
 
-    // toString method for debugging
     @Override
     public String toString() {
         return "Client{" +
