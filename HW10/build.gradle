@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.flywaydb.flyway' version '8.5.5'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation 'com.h2database:h2:2.1.212'
+
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+
+
+// https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+    implementation 'org.hibernate.orm:hibernate-core:6.1.0.Final'
+}
+
+flyway {
+    url = 'jdbc:h2:./database'
+    user = 'sa'
+    password = ''
+    locations = ['filesystem:src/main/resources/db/migration']
+}
+
